@@ -1,0 +1,222 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 1073741824 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3530), pid=49924, tid=27144
+#
+# JRE version:  (18.0.2+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (18.0.2+9-FR, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# Core dump will be written. Default location: E:\Bhavesh\eclipse\Workplace\Boot Projects(Bhavesh)\Quiz\hs_err_pid49924.mdmp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:TieredStopAtLevel=1 -Xverify:none -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -javaagent:C:\Users\bhavesh\Downloads\ideaIU-2021.3.3.win\lib\idea_rt.jar=63042:C:\Users\bhavesh\Downloads\ideaIU-2021.3.3.win\bin -Dfile.encoding=UTF-8 com.quiz.QuizApplication
+
+Host: Intel(R) Xeon(R) CPU E5-2620 v2 @ 2.10GHz, 24 cores, 63G,  Windows Server 2016 , 64 bit Build 14393 (10.0.14393.5786)
+Time: Fri May 24 14:52:50 2024 India Standard Time elapsed time: 2.036297 seconds (0d 0h 0m 2s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001ffaf31ff00):  JavaThread "Unknown thread" [_thread_in_vm, id=27144, stack(0x0000005592d00000,0x0000005592e00000)]
+
+Stack: [0x0000005592d00000,0x0000005592e00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x685a2a]
+V  [jvm.dll+0x82ae8d]
+V  [jvm.dll+0x82c75e]
+V  [jvm.dll+0x82ce03]
+V  [jvm.dll+0x25ef4b]
+V  [jvm.dll+0x6828ca]
+V  [jvm.dll+0x67745a]
+V  [jvm.dll+0x3243f9]
+V  [jvm.dll+0x32ba86]
+V  [jvm.dll+0x37e00a]
+V  [jvm.dll+0x37e24f]
+V  [jvm.dll+0x2fb50a]
+V  [jvm.dll+0x2fc581]
+V  [jvm.dll+0x7fb300]
+V  [jvm.dll+0x38af71]
+V  [jvm.dll+0x7dab95]
+V  [jvm.dll+0x4058f3]
+V  [jvm.dll+0x4072b1]
+C  [jli.dll+0x519f]
+C  [ucrtbase.dll+0x1fb80]
+C  [KERNEL32.DLL+0x84d4]
+C  [ntdll.dll+0x51791]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffd97069610, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001ffaf3d8440 WorkerThread "GC Thread#0" [stack: 0x0000005592e00000,0x0000005592f00000] [id=54352]
+  0x000001ffaf3dd230 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000005592f00000,0x0000005593000000] [id=35464]
+  0x000001ffaf3de7e0 WorkerThread "G1 Conc#0" [stack: 0x0000005593000000,0x0000005593100000] [id=12656]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd9683c5c7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001ffaf31e720] Heap_lock - owner thread: 0x000001ffaf31ff00
+
+Heap address: 0x0000000402800000, size: 16344 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 64 size 144 Howl #buckets 8 coarsen threshold 14745 Howl Bitmap #cards 2048 size 272 coarsen threshold 1843 Card regions per heap region 1 cards per card region 16384
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000402800000, 0x0000000800000000)
+  region size 8192K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd96c0d5a9]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.024 Loaded shared library C:\Users\bhavesh\.jdks\corretto-18.0.2\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff6de0f0000 - 0x00007ff6de0fd000 	C:\Users\bhavesh\.jdks\corretto-18.0.2\bin\java.exe
+0x00007ffdf2180000 - 0x00007ffdf234f000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffdf1aa0000 - 0x00007ffdf1b4d000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffdee820000 - 0x00007ffdeea3e000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffdef620000 - 0x00007ffdef714000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffdc4710000 - 0x00007ffdc4727000 	C:\Users\bhavesh\.jdks\corretto-18.0.2\bin\jli.dll
+0x00007ffdc46f0000 - 0x00007ffdc4705000 	C:\Users\bhavesh\.jdks\corretto-18.0.2\bin\VCRUNTIME140.dll
+0x00007ffdf16b0000 - 0x00007ffdf1816000 	C:\Windows\System32\USER32.dll
+0x00007ffdeea40000 - 0x00007ffdeea5e000 	C:\Windows\System32\win32u.dll
+0x00007ffdf2010000 - 0x00007ffdf2044000 	C:\Windows\System32\GDI32.dll
+0x00007ffde2c00000 - 0x00007ffde2e7a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.14393.4169_none_7de0bbf28341b1f2\COMCTL32.dll
+0x00007ffdee690000 - 0x00007ffdee814000 	C:\Windows\System32\gdi32full.dll
+0x00007ffdf1d30000 - 0x00007ffdf1dce000 	C:\Windows\System32\msvcrt.dll
+0x00007ffdefbb0000 - 0x00007ffdefe76000 	C:\Windows\System32\combase.dll
+0x00007ffdf2060000 - 0x00007ffdf217d000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffdee620000 - 0x00007ffdee68c000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffdf1f70000 - 0x00007ffdf1f9e000 	C:\Windows\System32\IMM32.DLL
+0x00007ffdaf2a0000 - 0x00007ffdaf33b000 	C:\Users\bhavesh\.jdks\corretto-18.0.2\bin\msvcp140.dll
+0x00007ffd96530000 - 0x00007ffd971a1000 	C:\Users\bhavesh\.jdks\corretto-18.0.2\bin\server\jvm.dll
+0x00007ffdf1820000 - 0x00007ffdf18c7000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffdf1bf0000 - 0x00007ffdf1c4d000 	C:\Windows\System32\sechost.dll
+0x00007ffdeecb0000 - 0x00007ffdeecdb000 	C:\Windows\System32\bcrypt.dll
+0x00007ffdf2050000 - 0x00007ffdf2058000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffdebd80000 - 0x00007ffdebda3000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffde4520000 - 0x00007ffde4529000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffde7c90000 - 0x00007ffde7c9a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffdf1fa0000 - 0x00007ffdf200a000 	C:\Windows\System32\WS2_32.dll
+0x00007ffdebd20000 - 0x00007ffdebd4b000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffdeea60000 - 0x00007ffdeeaa2000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ffdee590000 - 0x00007ffdee59f000 	C:\Windows\System32\kernel.appcore.dll
+0x00007ffdc4930000 - 0x00007ffdc493a000 	C:\Users\bhavesh\.jdks\corretto-18.0.2\bin\jimage.dll
+0x00007ffddd8a0000 - 0x00007ffddda32000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffddd7f0000 - 0x00007ffddd819000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffde3af0000 - 0x00007ffde3afe000 	C:\Users\bhavesh\.jdks\corretto-18.0.2\bin\instrument.dll
+0x00007ffdc45c0000 - 0x00007ffdc45e5000 	C:\Users\bhavesh\.jdks\corretto-18.0.2\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\bhavesh\.jdks\corretto-18.0.2\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.14393.4169_none_7de0bbf28341b1f2;C:\Users\bhavesh\.jdks\corretto-18.0.2\bin\server
+
+VM Arguments:
+jvm_args: -XX:TieredStopAtLevel=1 -Xverify:none -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -javaagent:C:\Users\bhavesh\Downloads\ideaIU-2021.3.3.win\lib\idea_rt.jar=63042:C:\Users\bhavesh\Downloads\ideaIU-2021.3.3.win\bin -Dfile.encoding=UTF-8 
+java_command: com.quiz.QuizApplication
+java_class_path (initial): E:\Bhavesh\eclipse\Workplace\Boot Projects(Bhavesh)\Quiz\target\classes;C:\Users\bhavesh\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.12\spring-boot-starter-data-jpa-3.1.12.jar;C:\Users\bhavesh\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.12\spring-boot-starter-aop-3.1.12.jar;C:\Users\bhavesh\.m2\repository\org\springframework\spring-aop\6.0.21\spring-aop-6.0.21.jar;C:\Users\bhavesh\.m2\repository\org\aspectj\aspectjweaver\1.9.22\aspectjweaver-1.9.22.jar;C:\Users\bhavesh\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.12\spring-boot-starter-jdbc-3.1.12.jar;C:\Users\bhavesh\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\bhavesh\.m2\repository\org\springframework\spring-jdbc\6.0.21\spring-jdbc-6.0.21.jar;C:\Users\bhavesh\.m2\repository\org\hibernate\orm\hibernate-core\6.2.25.Final\hibernate-core-6.2.25.Final.jar;C:\Users\bhavesh\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\bhavesh\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\bhavesh\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\bhavesh\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\bhavesh\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\bhavesh\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\bhavesh\.m2\repository\net\bytebuddy\byte-buddy\1.14.16\byte-buddy-1.14.16.jar;C:\Users\bhavesh\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\bhavesh\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\bhavesh\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\bhavesh\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\bhavesh\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\bhavesh\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\bhavesh\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\bhavesh\.m2\repository\org\springframework\data\spring-data-jpa\3.1.12\spring-data-jpa-3.1.12.jar;C:\Users\bhavesh\.m2\repository\org\springframework\data\spring-data-commons\3.1.12\spring-data-commons-3.1.12.jar;C:\Users\bhavesh\.m2\repository\org\springframework\spring-orm\6.0.21\spring-orm-6.0.21.jar;C:\Users\bhavesh\.m2\repository\org\springframework\spring-context\6.0.21\spring-context-6.0.21.jar;C:\Users\bhavesh\.m2\repository\org\springframework\spring-tx\6.0.21\spring-tx-6.0.21.jar;C:\Users\bhavesh\.m2\repository\org\springframework\spring-beans\6.0.21\spring-beans-6.0.21.jar;C:\Users\bhavesh\.m2\repository\org\slf4j\slf4j-api\2.0.13\slf4j-api-2.0.13.jar;C:\Users\bhavesh\.m2\repository\org\springframework\spring-aspects\6.0.21\spring-aspects-6.0.21.jar;C:\Users\bhavesh\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.12\spring-boot-starter-web-3.1.12.jar;C:\Users\bhavesh\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.12\spring-boot-starter-3.1.12.jar;C:\Users\bhavesh\.m2\repository\org\springframework\boot\spring-boot\3.1.12\spring-boot-3.1.12.jar;C:\Users\bhavesh\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.12\spring-boot-autoconfigure-3.1.12.jar;C:\Users\bhavesh\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.12\spring-boot-starter-logging-3.1.12.jar;C:\Users\bhavesh\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar;C:\Users\bhavesh\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar;C:\Users\bhavesh\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\bhavesh\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\bhavesh\.m2\repository\org\slf4j\jul-to-slf4j\2.0.13\jul-to-slf4j-2.0.13.jar;C:\Users\bhavesh\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\bhavesh\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.12\spring-boot-starter-json-3.1.12.jar;C:\Users\bhavesh\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.4\jackson-databind-2.15.4.jar;C:\Users\bhavesh\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.4\jackson-annotations-2.15.4.jar;C:\Users\bhavesh\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.4\jackson-core-2.15.4.jar;C:\Users\bhavesh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.4\jackson-datatype-jdk8-2.15.4.jar;C:\Users\bhavesh\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.4\jackson-datatype-jsr310-2.15.4.jar;C:\Users\bhavesh\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.4\jackson-module-parameter-names-2.15.4.jar;C:\Users\bhavesh\.m2\repository\org\springframework\spring-web\6.0.21\spring-web-6.0.21.jar;C:\Users\bhavesh\.m2\repository\io\micrometer\micrometer-observation\1.11.12\micrometer-observation-1.11.12.jar;C:\Users\bhavesh\.m2\repository\io\micrometer\micrometer-commons\1.11.12\micrometer-commons-1.11.12.jar;C:\Users\bhavesh\.m2\repository\org\springframework\spring-webmvc\6.0.21\spring-webmvc-6.0.21.jar;C:\Users\bhavesh\.m2\repository\org\springframework\spring-expression\6.0.21\spring-expression-6.0.21.jar;C:\Users\bhavesh\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\bhavesh\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.12\spring-boot-starter-tomcat-3.1.12.jar;C:\Users\bhavesh\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\bhavesh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.24\tomcat-embed-core-10.1.24.jar;C:\Users\bhavesh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.24\tomcat-embed-el-10.1.24.jar;C:\Users\bhavesh\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.24\tomcat-embed-websocket-10.1.24.jar;C:\Users\bhavesh\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\bhavesh\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\bhavesh\.m2\repository\org\springframework\spring-core\6.0.21\spring-core-6.0.21.jar;C:\Users\bhavesh\.m2\repository\org\springframework\spring-jcl\6.0.21\spring-jcl-6.0.21.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 5                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 18                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 8388608                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 1073741824                                {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 17137926144                               {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 8388608                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+     bool ProfileInterpreter                       = false                                  {pd product} {command line}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 17137926144                            {manageable} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_201
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\ImageMagick-7.1.1-Q16-HDRI;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\apache-maven-3.8.3\bin;C:\Program Files\PuTTY\;C:\Program Files\gs\gs10.02.1\bin;C:\Program Files\VisualSVN Server\bin;"C:\Program Files\Java\jdk1.8.0_201\bin";C:\Users\bhavesh\AppData\Local\Microsoft\WindowsApps;
+USERNAME=bhavesh
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 62 Stepping 4, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows Server 2016 , 64 bit Build 14393 (10.0.14393.5786)
+OS uptime: 3 days 3:40 hours
+
+CPU: total 24 (initial active 24) (6 cores per cpu, 2 threads per core) family 6 model 62 stepping 4 microcode 0x42e, cx8, cmov, fxsr, ht, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, tscinvbit, avx, aes, erms, clmul, vzeroupper, clflush
+
+Memory: 4k page, system-wide physical 65347M (9733M free)
+TotalPageFile size 75075M (AvailPageFile size 12M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 76M, peak: 1100M
+
+vm_info: OpenJDK 64-Bit Server VM (18.0.2+9-FR) for windows-amd64 JRE (18.0.2+9-FR), built on Jul 15 2022 20:03:03 by "Administrator" with MS VC++ 15.9 (VS2017)
+
+END.
